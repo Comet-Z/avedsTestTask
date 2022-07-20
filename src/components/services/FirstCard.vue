@@ -74,4 +74,12 @@ export default {
     font-size: 14px;
     color: #737373;
 }
+
+/* responsive area: */
+/* mobile: */
+@media screen and (max-width: 1137px) {
+    .card__container {
+        width: 200px;
+    }
+}
 </style>

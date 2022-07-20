@@ -1,8 +1,8 @@
 <template>
   <div class="main">
-      <div class="main__container">
-          <h1 class="main__title">
-              Место для получения медицинской помощи
+        <div class="main__container">
+            <h1 class="main__title">
+                Место для получения медицинской помощи
         </h1>
         <div class="main__actions">
             <button 
@@ -18,7 +18,7 @@
     </div>
 
     <Teleport to="body">
-        <Registration 
+        <Login 
             :show="showModal"
             @close="showModal = false"
         />
@@ -27,11 +27,11 @@
 </template>
 
 <script>
-import Registration from './auth/RegistrationModal.vue'
+import Login from './auth/LoginModal.vue'
 
 export default {
     components: {
-        Registration,
+        Login,
     },
 
     data: () => ({

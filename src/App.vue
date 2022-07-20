@@ -2,30 +2,19 @@
   <div class="main">
     <Header />
 
-    <AuthModal />
-    
-    <div class="content">
-      <Main />
-      <Services />
+    <router-view>
 
-    </div>
-
+    </router-view>
   </div>
 </template>
 
 <script>
 import Header from './components/HeaderComponent.vue'
-import Main from './components/MainComponent.vue'
-import Services from './components/ServicesComponent.vue'
-import AuthModal from './components/auth/RegistrationModal.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Main,
-    Services,
-    AuthModal
   }
 }
 </script>
@@ -62,14 +51,18 @@ export default {
     width: 128px;
  }
 
- .main-services {
-    align-items: center;
-    flex-direction: column;
- }
-
  .action-btn {
     height: 50px;
     width: 140px;
+ }
+ 
+ .card__container {
+  width: 100px;
+ }
+
+ .modal__container {
+    width: 87%;
+    left: 0%;  
  }
 }
 
@@ -85,5 +78,10 @@ export default {
   .card__container {
     width: 285px;
   }
+
+  /* .modal__container {
+    left: 26%;
+    width: 550px;
+  } */
 }
 </style>

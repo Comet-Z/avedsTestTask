@@ -9,34 +9,35 @@
                 v-model="email"
                 type="email"
             >
-            <span v-if="v$.email.$error"> 
+            <!-- <span v-if="v$.email.$error"> 
                 <p>Неверный формат почты!</p>
-            </span>
+            </span> -->
 
             <br>
 
             <label for="">Пароль:</label>
             <input 
-                v-model="password.password"
+                v-model="password"
                 type="password"
             >
-            <span v-if="v$.password.$error"> 
+            <!-- <span v-if="v$.password.$error"> 
                 <p>Пароль должен содержать хотя бы 6 чичел!</p>
-            </span>
-
+            </span> -->
+<!-- 
             <label>Подтвердите пароль:</label>
             <input 
                 type="password"
-                v-model="confirm.confirm"
-            >
-            <span v-if="v$.confirm.$error"> 
+                
+            > -->
+            <!-- <span v-if="v$.confirm.$error"> 
                 <p>Пароли не совпадают</p>
-            </span>
+            </span> -->
         </div>
 
         <div class="modal__buttons">
             <button
-                @click="submit" 
+                v-on:focusout="submit"
+                @click="register" 
                 class="auth-btn"
             >
                 Создать аккаунт
@@ -53,46 +54,94 @@
   </div>
 </template>
 
-<script>
+<script >
+// vue:
+import { ref } from 'vue'
 // vuelidate:
-import useValidate from '@vuelidate/core'
-import { required, email, minLength, sameAs } from '@vuelidate/validators'
+// import router from '@/router'
+// import useValidate from '@vuelidate/core'
+// import { required, email, minLength, sameAs } from '@vuelidate/validators'
+// firebase:
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+// router
+import { useRouter } from 'vue-router'
 
 export default {
     props: {
         show: Boolean
     },
+    
+    setup() {
+        const email = ref("")
+        const password = ref("")
+        const router = useRouter()
 
-    data() {
-        return {
-            v$: useValidate(),
-            email: '',
-            password: {
-                password: '',
-            },
-            confirm: {
-                confirm: ''
-            }
+        const register = () => {
+            createUserWithEmailAndPassword(getAuth(), email.value, password.value)
+                .then(() => {
+                    console.log("Logged In!");
+                    router.push('/user')
+                })
+                .catch((error) => {
+                    console.log(error.code);    
+                    alert(error.message)
+                })
         }
-    },
 
-    methods: {
-        submit() {
-            this.v$.$validate()
-        }
-    },
-
-    validations() {
         return {
-            email: { required, email },
-            password: {
-                password: { required, minLength: minLength(6) },
-            },
-            confirm: {
-                confirm: {required, sameAs: sameAs(this.password.password)}
-            }
+            email,
+            password,
+            router,
+            register,
         }
     }
+
+    // data() {
+    //     return {
+    //         v$: useValidate(),
+    //         email: '',
+    //         password: {
+    //             password: '',
+    //         },
+    //         confirm: {
+    //             confirm: ''
+    //         },
+            
+    //         router: useRouter()
+    //     }
+    // },
+
+    // methods: {
+    //     submit: () => {
+    //         this.v$.$validate()
+
+    //     },
+
+    //     register: () => {
+    //         createUserWithEmailAndPassword(getAuth(), email, this.password)
+    //             .then(() => {
+    //                 console.log("Logged In!");
+    //                 router.push('/user')
+    //             })
+    //             .catch((error) => {
+    //                 console.log(error.code);
+    //                 alert(error.message)
+    //             })
+    //     }
+
+    // },
+
+    // validations() {
+    //     return {
+    //         email: { required, email },
+    //         password: {
+    //             password: { required, minLength: minLength(6) },
+    //         },
+    //         confirm: {
+    //             confirm: {required, sameAs: sameAs(this.password.password)}
+    //         }
+    //     }
+    // }
 }
 </script>
 

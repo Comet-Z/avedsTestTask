@@ -8,16 +8,12 @@
           </a>
         </div>
         <div class="header__menu">
-          <button 
-            href="#"
-            class="contacts"
-          >
+          <router-link class="contacts" to="/contacts">
             Контакты
-          </button>
+          </router-link>
 
-          <button 
+          <button
             @click="showModal = true"
-            href="#"
             class="login"
           >
             Войти
@@ -27,7 +23,7 @@
     </div>
     
      <Teleport to="body">
-        <Registration 
+        <Login 
             :show="showModal"
             @close="showModal = false"
         />
@@ -36,11 +32,11 @@
 </template>
 
 <script>
-import Registration from './auth/RegistrationModal.vue'
+import Login from './auth/LoginModal.vue'
 
 export default {
     components: {
-        Registration,
+        Login,
     },
 
     data: () => ({
