@@ -4,12 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
 .main {
   padding: 100px 120px;

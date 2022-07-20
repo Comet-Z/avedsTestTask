@@ -78,10 +78,5 @@ export default {
   .card__container {
     width: 285px;
   }
-
-  /* .modal__container {
-    left: 26%;
-    width: 550px;
-  } */
 }
 </style>

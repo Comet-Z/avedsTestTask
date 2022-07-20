@@ -21,7 +21,7 @@
 
 <script>
 // vue:
-import {ref } from "vue";
+import { ref } from "vue";
 // firebase:
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 // router
@@ -59,53 +59,6 @@ export default {
       login,
     };
   },
-
-  // data() {
-  //     return {
-  //         v$: useValidate(),
-  //         email: '',
-  //         password: {
-  //             password: '',
-  //         },
-  //         confirm: {
-  //             confirm: ''
-  //         },
-
-  //         router: useRouter()
-  //     }
-  // },
-
-  // methods: {
-  //     submit: () => {
-  //         this.v$.$validate()
-
-  //     },
-
-  //     register: () => {
-  //         createUserWithEmailAndPassword(getAuth(), email, this.password)
-  //             .then(() => {
-  //                 console.log("Logged In!");
-  //                 router.push('/user')
-  //             })
-  //             .catch((error) => {
-  //                 console.log(error.code);
-  //                 alert(error.message)
-  //             })
-  //     }
-
-  // },
-
-  // validations() {
-  //     return {
-  //         email: { required, email },
-  //         password: {
-  //             password: { required, minLength: minLength(6) },
-  //         },
-  //         confirm: {
-  //             confirm: {required, sameAs: sameAs(this.password.password)}
-  //         }
-  //     }
-  // }
 };
 </script>
 
@@ -171,6 +124,4 @@ input {
   margin-bottom: 4rem;
   text-align: center;
 }
-
-
 </style>

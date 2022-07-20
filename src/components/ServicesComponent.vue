@@ -7,26 +7,26 @@
 </template>
 
 <script>
-import FirstCard from './services/FirstCard.vue'
-import SecondCard from './services/SecondCard.vue'
-import ThirdCard from './services/ThirdCard.vue'
+import FirstCard from "./services/FirstCard.vue";
+import SecondCard from "./services/SecondCard.vue";
+import ThirdCard from "./services/ThirdCard.vue";
 
 export default {
-    components: {
-        FirstCard,
-        SecondCard,
-        ThirdCard
-    }
-}
+  components: {
+    FirstCard,
+    SecondCard,
+    ThirdCard,
+  },
+};
 </script>
 
 <style>
 .main-services {
-    display: flex;
-    justify-content: center;
-    
-    margin-top: 2rem;
-    gap: 31px;
+  display: flex;
+  justify-content: center;
+
+  margin-top: 2rem;
+  gap: 31px;
 }
 
 @media screen and (max-width: 1223px) {
