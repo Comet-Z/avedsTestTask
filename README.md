@@ -1,3 +1,10 @@
+## Account for testing:
+```
+Email: pasha.komarov.2016@bk.ru
+Password: 41162954562123
+```
+
+
 ## Project setup
 ```
 npm install
