@@ -1,5 +1,3 @@
-# project
-
 ## Project setup
 ```
 npm install
@@ -14,15 +12,9 @@ npm install firebase
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Tools used for the project:
 ```
-npm run build
+1. Vue 3
+2. Vue Router
+3. Firebase
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
