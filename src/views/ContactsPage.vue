@@ -12,4 +12,10 @@
   font-weight: bold;
   font-size: 28px;
 }
+
+@media screen and (max-width: 1137px) {
+  .main {
+    padding: 0;
+  }
+}
 </style>

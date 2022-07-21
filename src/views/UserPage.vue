@@ -87,4 +87,11 @@ export default {
   width: 100%;
   gap: 20px;
 }
+
+@media screen and (max-width: 1137px) {
+  .main {
+    padding: 0;
+    font-size: 10px;
+  }
+}
 </style>

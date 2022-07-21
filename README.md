@@ -1,17 +1,8 @@
-## Account for testing:
-```
-Email: pasha.komarov.2016@bk.ru
-Password: 41162954562123
-```
-
+# project
 
 ## Project setup
 ```
 npm install
-```
-## Firebase
-```
-npm install firebase
 ```
 
 ### Compiles and hot-reloads for development
@@ -19,9 +10,15 @@ npm install firebase
 npm run serve
 ```
 
-### Tools used for the project:
+### Compiles and minifies for production
 ```
-1. Vue 3
-2. Vue Router
-3. Firebase
+npm run build
 ```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
